@@ -2,12 +2,12 @@
 <head>
 	<title>Train Table</title>
 	<meta charset="UTF-8">
-	<!-- Latest compiled and minified Bootstrap CSS & JS Libraries -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<!-- Firebase Reference -->
 	<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+	<!-- Latest compiled and minified Bootstrap CSS & JS Libraries -->
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<!-- Moment.js Reference -->
  	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
  
@@ -56,27 +56,27 @@
 						<!-- Entry Form -->
 						<form>
 							<div class="form-group">
-								<label for="">Train Name</label>
+								<label for="trainNameInput">Train Name</label>
 								<input type="text" class="form-control" id="trainNameInput">
 							</div>
 
 							<div class="form-group">
-								<label for="">Line</label>
+								<label for="lineInput">Line</label>
 								<input type="text" class="form-control" id="lineInput">
 							</div>
 
 							<div class="form-group">
-								<label for="">Destination</label>
+								<label for="destinationInput">Destination</label>
 								<input type="text" class="form-control" id="destinationInput">
 							</div>
 
 							<div class="form-group">
-								<label for="">First Train Time (HH:mm - military time)</label>
+								<label for="trainTimeInput">First Train Time (HH:mm - military time)</label>
 								<input type="text" class="form-control" id="trainTimeInput">
 							</div>
 
 							<div class="form-group">
-								<label for="">Frequency (min)</label>
+								<label for="frequencyInput">Frequency (min)</label>
 								<input type="text" class="form-control" id="frequencyInput">
 							</div>
 							
@@ -88,6 +88,6 @@
 		</div>
 	</div>
 	<!-- Javascript -->
-	    <script type="text/javascript" src="assets/Javascript/script.js"></script>
+	    <script type="text/javascript" src="script.js"></script> 
 </body>
 </html>
