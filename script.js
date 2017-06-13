@@ -9,29 +9,25 @@
   };
   firebase.initializeApp(config);
 
-// Create a variable to reference the database
+
 var database = firebase.database();
 
 //Declaring the current time
 var currentTime = moment().format();
 
-//Logging the current time
 	console.log("Current Time: " + currentTime);
 				
-//When the submit button is clicked, we will run the snapshot function below.
+//When the button clicked run the snapshot 
 $("#addTrainBtn").on("click", function() {
-      // Prevent the page from refreshing
       event.preventDefault();
-
       // Grabs user input
 	  var trainNameInput = $("#trainNameInput").val().trim();
 	  var destinationInput = $("#destinationInput").val().trim();
 	  var trainTimeInput = moment($("#trainTimeInput").val().trim(), "HH:mm").format("HH:mm");
-	//Saving this goodness
-//	  var frequencyForm = moment($("#frequencyForm").val().trim().format("mm"));
+
 	  var frequencyInput = $("#frequencyInput").val().trim();
 
-	  // Creates local "temporary" object for holding inputs
+	  // Creates local 
 	  var newTrain = {
 		train: trainNameInput,
 		destination: destinationInput,
@@ -40,8 +36,7 @@ $("#addTrainBtn").on("click", function() {
     };
 	//Setting the new values in the database
 	database.ref().push(newTrain);
-	
-	//Console.logging to make sure the new data has been stored to the database
+
 	console.log(newTrain.train);
   	console.log(newTrain.destination);
 	console.log(newTrain.first);
@@ -54,18 +49,16 @@ $("#addTrainBtn").on("click", function() {
 	 $("#frequencyInput").val("");
 });
 
-//Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
 database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
   console.log(childSnapshot.val());
 	
-  // Store everything into a variable.
   var trainName = childSnapshot.val().train;
   var trainDestination = childSnapshot.val().destination;
   var trainTime = childSnapshot.val().first;
   var trainFrequency = childSnapshot.val().frequency;
   
-  //Variable to figure out the converted train time
+  //the converted train time
   var trainTimeConverted = moment(trainTime, "HH:mm");
 	
   //Declaring a time difference variable
