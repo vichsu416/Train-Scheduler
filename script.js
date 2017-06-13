@@ -27,7 +27,7 @@ $("#addTrainBtn").on("click", function() {
 
 	  var frequencyInput = $("#frequencyInput").val().trim();
 
-	  // Creates local 
+	  // Creates local storage
 	  var newTrain = {
 		train: trainNameInput,
 		destination: destinationInput,
