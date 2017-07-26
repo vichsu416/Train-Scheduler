@@ -58,7 +58,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   console.log(childSnapshot.val());
 	
   var trainName = childSnapshot.val().train;
-  var lineInput = childSnapshot.val().train;
+  var trainLine = childSnapshot.val().train;
   var trainDestination = childSnapshot.val().destination;
   var trainTime = childSnapshot.val().first;
   var trainFrequency = childSnapshot.val().frequency;
