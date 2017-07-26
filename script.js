@@ -31,6 +31,7 @@ $("#addTrainBtn").on("click", function() {
 	  // Creates local storage
 	  var newTrain = {
 		train: trainNameInput,
+		line : lineInput,
 		destination: destinationInput,
 		first: trainTimeInput,
 		frequency: frequencyInput
@@ -38,6 +39,7 @@ $("#addTrainBtn").on("click", function() {
 	//Setting the new values in the database
 	database.ref().push(newTrain);
 
+	console.log(newTrain.line);
 	console.log(newTrain.train);
   	console.log(newTrain.destination);
 	console.log(newTrain.first);
@@ -45,6 +47,7 @@ $("#addTrainBtn").on("click", function() {
 	
 	//Clearing the inputs
 	 $("#trainNameInput").val("");
+	 $("#lineInput").val("");
   	 $("#destinationInput").val("");
 	 $("#trainTimeInput").val("");
 	 $("#frequencyInput").val("");
@@ -55,6 +58,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   console.log(childSnapshot.val());
 	
   var trainName = childSnapshot.val().train;
+  var lineInput = childSnapshot.val().train;
   var trainDestination = childSnapshot.val().destination;
   var trainTime = childSnapshot.val().first;
   var trainFrequency = childSnapshot.val().frequency;
@@ -77,5 +81,5 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 	
 	
   //Adding into the table
-  $("#trainTable > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" + trainFrequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td></tr>");
+  $("#trainTable > tbody").append("<tr><td>" + trainName + "</td><td>" + trainLine + "</td><td>" + trainDestination + "</td><td>" + trainFrequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td></tr>" );
 });
